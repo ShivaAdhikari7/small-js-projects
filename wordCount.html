@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
+    <style>
+        body{
+            padding: 50px 100px;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            background-color: #0067B0;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            font-size: 25px;
+        }
+        #textbox{
+            
+            border: 2px solid #0067B0;
+            width: 99.4%;
+        }
+        p{
+            margin: 0;
+            text-align: center;
+            background-color: #0067B0;
+            padding: 20px;
+            color: white;
+            font-size: 25px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word and Character Counter</h1>
+    <textarea  id="textbox" cols="30" rows="10"></textarea>
+    <p><span id="words">0</span> Words and <span id="characters">0</span> Characters</p>
+
+    <script>
+        let textbox= document.getElementById("textbox");
+        let words=document.getElementById("words");
+        let characters= document.getElementById("characters");
+        textbox.addEventListener("input", function(){
+            let msgvalue= this.value;
+            let char= msgvalue.length;
+            characters.innerHTML=char;
+
+            msgvalue=msgvalue.trim();
+            let numberOfWords=msgvalue.split(" ");
+            let clearList= numberOfWords.filter(function(e){
+                return e!=""
+            });            
+            words.innerHTML=clearList.length;
+            
+        });
+    </script>
+</body>
+</html>

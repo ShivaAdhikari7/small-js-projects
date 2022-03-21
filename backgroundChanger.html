@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body{
+            padding: 50px 100px;
+            font-family: sans-serif;
+        }
+       #color-changer{
+           float: right;
+       }
+        span{
+            height: 30px;
+            width: 30px;
+            border: 2px solid grey;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #white{
+            background:#ffffff ;
+        }
+        #aqua{
+            background:#7fff64 ;
+        }
+        #violet{
+            background:#ce9aff ;
+        }
+        #black{
+            background:#000000 ;
+        }
+        h1{
+            text-decoration: underline;
+            text-align: center;
+        }
+        img{
+            width: 500px;
+            margin: 15px 394px;
+            border-radius: 10px;           
+        }
+        p{
+            text-align: justify;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="color-changer">
+        <span class="button" id="white" ></span>
+        <span class="button" id="aqua" onclick="changeBG('#7fff64')"></span>
+        <span class="button" id="violet" onclick="changeBG('#ce9aff')"></span>
+        <span class="button" id="black" onclick="changeBG('#000000')"></span>
+    </div>
+    <h1 class="text">About Us</h1>
+    <img src="about.jpg" alt="">
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error unde voluptates ducimus, voluptatibus
+        quisquam tempore et minima consectetur sit numquam, culpa nihil, omnis deserunt! In facilis sint blanditiis,
+        vero velit maxime praesentium repellendus voluptatum excepturi, quam exercitationem ipsa saepe neque, odit
+        totam! Doloremque temporibus saepe quidem voluptatibus in consectetur nisi dignissimos exercitationem, omnis,
+        itaque eveniet? Fugit ut cumque aliquam quas aperiam nobis, in non amet aut ad rerum? Incidunt officia inventore
+        libero odit commodi, ex neque possimus et nihil, provident, laborum eveniet. Fugiat laborum expedita qui eius
+        sapiente libero fuga, ipsa adipisci delectus iure rem ipsam odit enim fugit! Qui ipsam, fugit porro, recusandae
+        soluta quidem fuga deleniti dolorum modi a nulla, suscipit quam debitis earum consectetur doloribus hic
+        excepturi possimus ab! Accusantium aperiam nihil non dolor incidunt doloremque quaerat pariatur odio? Quia
+        beatae numquam nesciunt magnam, quibusdam minus eaque ut neque nulla soluta officia consequatur quo nobis
+        eligendi maxime repudiandae reprehenderit? Quidem ab labore exercitationem ipsa natus expedita consectetur
+        nostrum nulla ut debitis excepturi temporibus accusantium deleniti suscipit, unde dignissimos dolorum, soluta
+        laudantium, neque quaerat nisi odio. Saepe rerum suscipit sint tempore vel, consequatur enim omnis quasi aliquid
+        debitis, sapiente quibusdam velit repellendus quia minus ipsum facere officia laudantium magni! Nemo adipisci
+        libero, temporibus culpa exercitationem, non voluptatum sed magni assumenda amet, vero consectetur porro alias
+        quae dolorem ex distinctio? Reprehenderit non iste suscipit ratione itaque magnam autem illum nulla fugit quia
+        facilis, obcaecati molestiae laudantium ad. Earum porro odit vitae quibusdam laboriosam, recusandae expedita,
+        blanditiis sit eos possimus quae fugit iure nobis saepe ut sapiente sequi nihil, illum quod eum? Corporis
+        perspiciatis voluptatum magni similique reiciendis vitae ad? Repellendus nemo maiores cupiditate eos,
+        praesentium veritatis ex aspernatur, rerum velit iusto maxime debitis officia. Ipsam, illo? Corporis quos quas
+        eum eos blanditiis nemo sed ducimus vitae iusto impedit! Obcaecati quod omnis sed, eligendi, maxime similique
+        laboriosam maiores error fugiat atque labore pariatur eum minus expedita architecto voluptatum dolor dicta id ea
+        possimus fugit velit, autem tempora tempore. Fugit velit, accusamus quasi accusantium iste eius odio culpa
+        libero cumque laboriosam unde labore dignissimos quam mollitia, dolorem sapiente adipisci nam fugiat distinctio
+        voluptates esse qui repellat! Nam quod aliquam aperiam est quibusdam quasi fugiat illo dicta porro. Repellendus
+        accusantium illo iusto architecto, quo a commodi repellat facilis labore explicabo vel impedit quae! Iusto
+        recusandae corrupti, modi reiciendis pariatur, exercitationem, dolorum porro officia rerum quasi numquam illo
+        earum. Quod dicta consequatur officiis nobis repudiandae adipisci maxime incidunt inventore neque deserunt fugit
+        saepe consequuntur dolore hic aut, ullam numquam labore animi debitis a molestiae similique? Odit sapiente
+        dolore ullam ab sunt repellendus libero facere incidunt dignissimos accusantium accusamus veniam impedit quas id
+        magnam, optio vero cum consectetur quae, iusto natus. Recusandae dolore quam ratione eius sapiente eligendi
+        quasi earum minus laborum pariatur praesentium tempora quod, a ullam amet nam alias debitis iure illum cumque
+        similique tempore quaerat! Eaque similique molestias culpa quasi quisquam ipsum, quis voluptatum impedit minus
+        vitae expedita soluta porro nisi maxime quod rem autem! Iure magni enim quisquam rerum iste!
+
+    </p>
+
+    <script>
+        // If we haven't given function on the span tag then we have to do like this:
+        let white=document.getElementById("white");
+        white.addEventListener("click", function(){
+            document.body.style.background='#ffffff';
+        });
+
+
+        function changeBG(color){
+            document.body.style.background = color;
+            let txt=document.getElementsByClassName("text");
+
+            if(color== "#000000"){
+                for(let elm of txt){
+                    elm.style.color='white';
+
+                }
+            }
+            else{
+
+                for(let elm of txt){
+                    elm.style.color="black";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

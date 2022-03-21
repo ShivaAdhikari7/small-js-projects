@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Div</title>
+</head>
+<style>
+    body{
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .mydiv{
+        background-color: cadetblue;
+        color: chartreuse;
+        padding: 100px;
+        margin:20px 0px;
+        }
+</style>
+<body>
+    <div id="container">
+        <h1 id="first">This is heading</h1>
+    </div>
+   <script>
+       let div=document.createElement("div");
+       div.setAttribute('class', 'mydiv');
+       div.setAttribute('id', 'mydiv');
+
+       let value=localStorage.getItem("text");
+       if(value==null){
+            div.textContent="This is editable div";
+       }
+       else{
+        div.textContent=value;
+       }
+       
+
+       let parent= document.getElementById("container");
+       let position=document.getElementById("first");
+       parent.insertBefore(div,position);
+
+    //    Adding click event:
+    div.addEventListener("click", function(){
+        let notextareas=document.getElementsByClassName("textarea").length;
+        if(notextareas==0){        
+        let html=div.innerHTML;
+        div.innerHTML=`<textarea id="textarea" class="textarea" rows="4" cols="50">${html}</textarea>`
+        }
+        // Add blur event:
+        let textarea=document.getElementById("textarea");
+        textarea.addEventListener("blur", function(){
+            div.innerHTML=textarea.value;
+            localStorage.setItem("text", textarea.value);
+        })
+    });
+       console.log(div);
+       
+   </script>
+</body>
+</html>
